@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="logo">
+        <img style="margin-top: 15px; width: 100px; height: 100px; border-radius: 10px"
+          src="https://www.cerromurillostereo.com/wp-content/uploads/2021/02/CERRO.png" alt="" />
+      </div>
+      <p class="title">Registro de Noticias</p>
+      <form [formGroup]="formRegister" (submit)="register()" novalidate>
+        <div class="form-floating mb-3">
+          <input type="text" formControlName="title" class="form-control" id="floatingInput">
+          <label for="floatingInput">Titulo de la Noticia</label>
+        </div>
+        <div class="form-floating mb-3">
+          <textarea class="form-control" formControlName="shortContent" id="exampleFormControlTextarea1"
+            rows="10" style="height: 100px"></textarea>
+          <label for="floatingTextarea">Resumen</label>
+        </div>
+        <div class="form-floating mb-3">
+          <textarea class="form-control" formControlName="content" id="exampleFormControlTextarea1"
+            rows="10"style="height: 100px"></textarea>
+          <label for="floatingTextarea">Contenido completo</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="text" formControlName="urlImage" class="form-control" id="floatingInput">
+          <label for="floatingInput">Url de Imagen Principal</label>
+        </div>
+        <div class="form-floating mb-3">
+          <select class="form-select" formControlName="category" aria-label="Default select example">
+            <option *ngFor="let category of categories" value="{{category.id}}">{{category.nom}}</option>
+          </select>
+          <label for="floatingInput">Categoría</label>
+        </div>
+        <div class="form-floating mb-3">
+          <select class="form-select" formControlName="author" aria-label="Default select example">
+            <option *ngFor="let author of authors" value="{{author.id}}">{{author.name}}</option>
+          </select>
+          <label for="floatingInput">Autor</label>
+        </div>
+        <div style="text-align: center; margin-bottom: 15px;">
+          <button type="submit" class="btn btn-primary">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
